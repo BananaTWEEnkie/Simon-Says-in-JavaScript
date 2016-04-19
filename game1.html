@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Game 1 - Stop looking at my tit...le</title>
+		
+		<!-- Import bootstrap -->
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<!-- Set viewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<style>
+			.red {
+				background-color: red;
+				// background-color: #ff7f7f;
+			}
+			
+			.blue {
+				background-color: blue;
+				// background-color: #7f7fff;
+			}
+			
+			.green {
+				background-color: green;
+				// background-color: #7fbf7f;
+			}
+			
+			.yellow {
+				background-color: yellow;
+				// background-color: #ffff7f;
+			}
+
+			.top {
+				width: 200px;
+				height: 75px;
+				position: fixed;
+				right: 50%;
+				top: 44px;
+				/* https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/ */
+ 				transform: translate(50%,0);
+			}
+			
+			.right {
+				width: 75px;
+				height: 200px;
+				position: fixed;
+				right: 0px;
+				top: 51%;
+				transform: translate(0,-50%);
+			}
+			
+			.bottom {
+				width: 200px;
+				height: 75px;
+				position: fixed;
+				right: 50%;
+				bottom: 0px;
+				transform: translate(50%,0);
+			}
+			
+			.left {
+				width: 75px;
+				height: 200px;
+				position: fixed;
+				left: 0px;
+				top: 51%;
+				transform: translate(0,-50%);
+			}
+			
+			button#start {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+		</style>
+		<!-- Add link to JQuery (required for bootstrap functionality) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Add bootstrap JavaScript library -->
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<!-- Add Custom JavaScript -->
+		<script src="js/simon.js"></script>
+		<script>
+			var trigger = false;
+			var selectedDivs = [];
+			var pattern = [];
+			var userClicks = [];
+			var rounds = 0;
+			var count = 0;
+			var i = 0;
+			var top = "top";
+		</script>
+	</head>
+	<!-- help from: http://stackoverflow.com/questions/4405954/how-to-remove-the-horizontal-scrollbar-in-a-div -->
+	<body style="overflow-y: hidden">
+		<header>
+			<a id="logo" href="home.html" class="visible-lg-block">
+				<img src="logo.png" class="no-transform">
+			</a>
+			<nav class="main center">
+				<a href="home.html"> Home </a> |
+					<a href="game1.html"> Game 1 </a> |
+					<a href="game2.html"> Game 2 </a> |
+					<a href="about.html"> About </a> |
+					<a href="contact.html"> Contact Me </a>
+			</nav>
+			<br>
+			<div class="visible-lg-inline">
+				<h3 style="margin-left: 12px;" id="displayRounds">Rounds: 0</h3>
+				<!-- CIS 311-[Thuy-Tien Nguyen-Tran]-Winter 2016 -->
+			</div>
+		</header>
+		<br>
+		<br>
+		<button id="start" type="button" class="btn btn-info" onClick="startGame()">Start</button>
+		<!-- http://www.w3schools.com/js/tryit.asp?filename=tryjs_form_radio -->
+		<form id="difficulty">
+			<input type="radio" id="easy" name="difficulty" value="Easy" checked>Easy<br>
+			<input type="radio" id="medium" name="difficulty" value="Medium">Medium<br>
+			<input type="radio" id="hard" name="difficulty" value="Hard">Hard
+		</form>
+		<p id="displayRounds"></p>
+		<!-- top code -->
+		<div id="top" class="container red top">
+			<img src="images/smiling_face.png" id="redImage" value="top" onClick="changeImage(this); buttonPress(document.getElementById('redImage').getAttribute('value'));">
+		</div>
+		<br>
+		<!-- <button type="button" id="up" class="btn btn-danger" value ="top" onclick="buttonPress(document.getElementById('up').value)" disabled>Red</button> -->
+		<!-- right code -->
+		<div id="right" class="container blue right">
+			<img src="images/smiling_face.png" id="blueImage" value ="right" onClick="changeImage(this); buttonPress(document.getElementById('blueImage').getAttribute('value'));">
+		</div>
+		<!-- <button type="button" id="right-side" class="btn btn-primary" value="right" onClick="buttonPress(document.getElementById('right-side').value)" disabled>B<br>l<br>u<br>e</button> -->
+		<!-- bottom code -->
+		<div id="bottom" class="container green bottom">
+			<img src="images/smiling_face.png" id="greenImage" value ="bottom" onClick="changeImage(this); buttonPress(document.getElementById('greenImage').getAttribute('value'));">
+		</div>
+		<!-- <button type="button" id="down" class="btn btn-success" value="bottom" onClick="buttonPress(document.getElementById('down').value)" disabled>Green</button> -->
+		<!-- left code -->
+		<div id="left" class="container yellow left">
+			<img src="images/smiling_face.png"  id="yellowImage" value="left" onClick="changeImage(this); buttonPress(document.getElementById('yellowImage').getAttribute('value'));">
+		</div>
+		<!-- <button type="button" id="left-side" class="btn btn-warning" value="left" onClick="buttonPress(document.getElementById('left-side').value)" disabled>Y<br>e<br>l<br>l<br>o<br>w</button> -->
+		<br>
+		<br>
+		<footer id="game1">
+			&copy;2016 Thuy-Tien Nguyen-Tran
+		</footer>
+	</body>
+</html>
