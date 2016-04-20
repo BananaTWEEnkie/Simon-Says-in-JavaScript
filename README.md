@@ -6,7 +6,7 @@ The class project in which I had to create a Simon Says game entirely in JavaScr
 
 ### Softwares/Websites Used
 * [Notepad++](https://notepad-plus-plus.org/) - Text editor I wrote all my HTML, CSS, and JS.
-* [W3School](http://www.w3schools.com/) - A web developer's information site compelte with tutorials and references.
+* [W3Schools](http://www.w3schools.com/) - A web developer's information site compelte with tutorials and references.
 
 ### Estimated Time to Complete
 Total Time: 2 weeks
