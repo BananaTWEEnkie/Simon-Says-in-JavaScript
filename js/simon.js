@@ -1,4 +1,3 @@
-// help from: http://codeplanet.io/building-simon-says-javascript/
 // https://github.com/jonathandiep/simon-says
 var interval;
 var buttonsState = document.getElementsByTagName("button");
