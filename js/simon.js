@@ -165,7 +165,7 @@ function checkDifficulty(difficulty) {
 // Help from: http://www.webdeveloper.com/forum/showthread.php?261613-RESOLVED-Image-scale-onclick by using this as a parameter
 function changeImage(it) {
 	if(trigger != false) {
-		it.src = "images/orgasm_face.png";
+		it.src = "images/clicked_face.png";
 		setTimeout(function(){
 			it.src = "images/smiling_face.png";
 		}, 300);
